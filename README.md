@@ -26,22 +26,53 @@ The dataset consists of **5 main tables** used to analyze:
 **👥AW_Customers**
 <details>
 <summary><strong>Table 1: AW_Customers</strong></summary>
-|Column Name      | Description    |
-|-----------------|-----------------|
-|`CustomerKey`    | 
-| `Prefix`        | 
-| `FirstName`     |
-| `LastName`      |
-| `BirthDate`     |
-| `MaritalStatus` |
-| `Gender`        |
-| `EmailAddress`  |
-| `AnnualIncome`  |
-| `TotalChildren` |
-| `EducationLevel`|
-| `Occupation`    |
-| `Home Owner`    |
+  
+|**Column Name**  | **Description**    |
+|-----------------|--------------------|
+| `CustomerKey`    | ID of customer    |
+| `Prefix`, `FirstName`, `LastName`, `BirthDate`, `MaritalStatus`, `Gender`, `EmailAddress`, <br> `AnnualIncome`, `TotalChildren`, `EducationLevel`, `Occupation`, `Home Owner` | Customer Info |
+
 **📦AW_Product_Categories**
+<details>
+<summary><strong>Table 2: AW_Product_Categories</strong></summary>
+  
+|**Column Name**       | **Description**            |
+|----------------------|----------------------------|
+| `ProductCategoryKey` | Unique Category identifier |
+| `CategoryName`       | Name of Category           |
+
 **🗂️AW_Product_Subcategories**
+<details>
+<summary><strong>Table 3: AW_Product_Subcategories</strong></summary>
+  
+|**Column Name**          | **Description**               |
+|-------------------------|-------------------------------|
+| `ProductSubcategoryKey` | Unique Subcategory identifier |
+| `SubcategoryName`       | Name of Subcategory           |
+| `ProductCategoryKey`    | Category reference            |
+
 **🛒AW_Products**
+<details>
+<summary><strong>Table 4: AW_Products</strong></summary>
+  
+|**Column Name**          | **Description**           |
+|-------------------------|---------------------------|
+| `ProductKey`            | Unique Product identifier |
+| `ProductSubcategoryKey` | Subcategory reference     |
+| `ProductSKU`, `ProductName`, `ModelName`, `ProductDescription`, <br> `ProductColor`, `ProductSize`, `ProductStyle`| Product Characteristics |
+| `ProductCost`           | Product Cost              |
+| `ProductPrice`          | Product Price             |
+
 **📈AW_Sales2016**
+<details>
+<summary><strong>Table 4: AW_Sales2016</strong></summary>
+  
+|**Column Name**          | **Description**            |
+|-------------------------|----------------------------|
+| `OrderDate`             | Order creation Date        |
+| `StockDate`             | Date Added to Stock        |
+| `OrderNumber`           | Sale Order Number          |
+| `ProductKey`            | Product reference          |
+| `CustomerKey`           | Customer reference         |
+| `OrderLineItem`         | Each row represents a single item in the order |
+| `OrderQuantity`         | Quantity ordered           |
