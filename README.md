@@ -1,4 +1,4 @@
-# Cutsomer Behavior Analysis for AdventureWorks | SQL
+# Customer Behavior Analysis for AdventureWorks | SQL
 
 <img width="1000" height="500" alt="Cover project github" src="https://github.com/user-attachments/assets/3cd605b4-4298-4a31-8c63-2322021b1967" />
 
@@ -21,8 +21,9 @@ This project analyzes a dataset using SQL to extract insights about customer beh
 - **Data Source:** Kaggle
 - The AW_Sales2016 contains 23,935 records 
 - **Format:** CSV
-### Data Structure & Relationships
-The dataset consists of **5 main tables** used to analyze:
+### Table Used & Relationships
+**1. Table Used**
+The dataset consists of **5 main tables** used to analyze: <br>
 **👥AW_Customers**
 <details>
 <summary><strong>Table 1: AW_Customers</strong></summary>
@@ -31,6 +32,8 @@ The dataset consists of **5 main tables** used to analyze:
 |-----------------|--------------------|
 | `CustomerKey`    | ID of customer    |
 | `Prefix`, `FirstName`, `LastName`, `BirthDate`, `MaritalStatus`, `Gender`, `EmailAddress`, <br> `AnnualIncome`, `TotalChildren`, `EducationLevel`, `Occupation`, `Home Owner` | Customer Info |
+
+</details> 
 
 **📦AW_Product_Categories**
 <details>
@@ -41,6 +44,8 @@ The dataset consists of **5 main tables** used to analyze:
 | `ProductCategoryKey` | Unique Category identifier |
 | `CategoryName`       | Name of Category           |
 
+</details>
+
 **🗂️AW_Product_Subcategories**
 <details>
 <summary><strong>Table 3: AW_Product_Subcategories</strong></summary>
@@ -50,6 +55,8 @@ The dataset consists of **5 main tables** used to analyze:
 | `ProductSubcategoryKey` | Unique Subcategory identifier |
 | `SubcategoryName`       | Name of Subcategory           |
 | `ProductCategoryKey`    | Category reference            |
+
+</details>
 
 **🛒AW_Products**
 <details>
@@ -63,9 +70,11 @@ The dataset consists of **5 main tables** used to analyze:
 | `ProductCost`           | Product Cost              |
 | `ProductPrice`          | Product Price             |
 
+</details> 
+
 **📈AW_Sales2016**
 <details>
-<summary><strong>Table 4: AW_Sales2016</strong></summary>
+<summary><strong>Table 5: AW_Sales2016</strong></summary>
   
 |**Column Name**          | **Description**            |
 |-------------------------|----------------------------|
@@ -76,3 +85,12 @@ The dataset consists of **5 main tables** used to analyze:
 | `CustomerKey`           | Customer reference         |
 | `OrderLineItem`         | Each row represents a single item in the order |
 | `OrderQuantity`         | Quantity ordered           |
+
+</details>
+
+***2. Table Relationships**
+| **From Table**                 | **To Table**                     | **Join Key**                | **Relationship Type**                                      |
+|--------------------------------|----------------------------------|-----------------------------|------------------------------------------------------------|
+
+
+
