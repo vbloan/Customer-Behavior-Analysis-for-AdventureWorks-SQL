@@ -90,7 +90,7 @@ The dataset consists of **5 main tables** used to analyze: <br>
 
 </details>
 
-***2. Table Relationships**
+**2. Table Relationships**
 
 | **From Table**                 | **To Table**                     | **Join Key**                | **Relationship Type**                                      |
 |--------------------------------|----------------------------------|-----------------------------|------------------------------------------------------------|
