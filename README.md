@@ -7,6 +7,8 @@
 **Tool Used:** SQL <br>
 
 ## Table of Contents
+[📌Background & Overview](#background--overview) <br>
+[📂Dataset Description & Data Structure](#dataset-description--data-structure)
 
 ## 📌Background & Overview
 **📖 What is this project about?** <br>
@@ -89,8 +91,14 @@ The dataset consists of **5 main tables** used to analyze: <br>
 </details>
 
 ***2. Table Relationships**
+
 | **From Table**                 | **To Table**                     | **Join Key**                | **Relationship Type**                                      |
 |--------------------------------|----------------------------------|-----------------------------|------------------------------------------------------------|
+| `AW_Customer`                  | `AW_Sales2016`                   | `CustomerKey`               | One-to-Many (one customer made many orders)                |
+| `AW_Products`                  | `AW_Product_Subcategories`       | `ProductSubcategoryKey`     | One-to-Many (each product belongs to one subcategory)      |
+| `AW_Product_Subcategories`     | `AW_Product_Categories`          | `ProductCategoryKey`        | One-to-Many (each subcategory belongs to one category      |
+| `AW_Products`                  | `AW_Sales2016`                   | `ProductKey`                | One-to-Many (one product in many orders)                   |
 
+## ⚙️Main Process
 
 
