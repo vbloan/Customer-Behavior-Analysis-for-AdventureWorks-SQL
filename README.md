@@ -9,6 +9,8 @@
 ## Table of Contents
 [📌Background & Overview](#background--overview) <br>
 [📂Dataset Description & Data Structure](#dataset-description--data-structure)
+[⚙️Main Process](#main-process)
+[✔️Final Conclusion & Recommendations](#final-conclusion--recommendations)
 
 ## 📌Background & Overview
 **📖 What is this project about?** <br>
