@@ -17,8 +17,15 @@
 This project analyzes a dataset using SQL to extract insights about customer behaviors and deliver data-driven recommendations to enhance customer loyalty and optimize sales strategies.
 
 **👤Who is this project for?**
+- Data Analysts & Business Analysts
+- Digital Marketing Teams
+- Sale Manager, Sale Team
 
 **❓Business Questions:** <br>
+- What are the monthly trends in customer purchasing behavior? <br>
+- What time periods see our highest sales volume? <br>
+- Which products are our best-sellers? <br>
+- What other products are frequently purchased? <br>
 
 ## 📂Dataset Description & Data Structure
 ### Data Description
