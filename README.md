@@ -100,11 +100,8 @@ The dataset consists of **5 main tables** used to analyze: <br>
 | `AW_Products`                  | `AW_Sales2016`                   | `ProductKey`                | One-to-Many (one product in many orders)                   |
 
 ## ⚙️Main Process
-### Customer Segmentation
-
-
-### Product Performance Analysis
-#### 🔍Calculate total purchase value by Product Subcategory
+### 1. Product Performance Analysis
+#### 1.1 🔍Calculate total purchase value by Product Subcategory
 The goal of this analysis is to identify the top product subcategories with the highest purchase value. <br>
 
 - **▶️Query** <br>
@@ -129,7 +126,10 @@ ORDER BY PurchaseValue DESC;
 
 <img width="470" height="186" alt="image" src="https://github.com/user-attachments/assets/3caa9382-9b48-4c17-99d9-bd3995825294" /> <br>
 
-#### 🔍Other products purchased by customers who purchased product subcategory “Mountain Bikes"
+- **🧠Insights** <br>
+Mountain Bikes is the product subcategory with the highest total purchase value. <br>
+
+#### 1.2 🔍Other products purchased by customers who purchased product subcategory “Mountain Bikes"
 Identify the other product subcategories purchased by customers who bought the "Mountain Bikes". The output should list the product subcategory name and the quantity ordered, providing insights into cross-selling opportunities and customer preferences. <br>
 
 - **▶️Query** <br>
@@ -161,7 +161,10 @@ ORDER BY Quanity DESC;
 
 <img width="449" height="188" alt="image" src="https://github.com/user-attachments/assets/ade87069-08ff-4c65-8557-4c7aba1029c2" /> <br>
 
-#### 🔍(Price Effect) Does the cheapest one sell more? 
+- **🧠Insights** <br>
+Customers who bought the "Mountain Bikes" showed interest in related products like "Bottles and Cages" and "Tires and Tubes", which presents an opportunity for cross-selling. <br>
+
+#### 1.3 🔍(Price Effect) Does the cheapest one sell more? 
 This analysis is to identify whether the pricing strategy is effective. <br>
 - **▶️Query** <br>
 ```sql
@@ -176,8 +179,11 @@ ORDER BY pro.ProductPrice;
 
 <img width="447" height="186" alt="image" src="https://github.com/user-attachments/assets/bf3d60d6-9729-4864-a9a9-17ffe1d88b94" /> <br>
 
-### Customer Purchase Trends
-#### 🔍Customer Lifetime Value (CLV)
+- **🧠Insights** <br>
+The analysis shows that there is no strong correlation between a product's price and its sales volume. The cheapest items are not necessarily the best-sellers, which suggests that other factors, such as product quality or brand reputation, may be more important to customers. <br>
+
+### 2. Customer Purchase Trends
+#### 2.1 🔍Customer Lifetime Value (CLV)
 Calculate the total profit that a customer brings to the company over the entire duration of their relationship. This analysis will identify and segment the most valuable customers of the company. The company can then tailor marketing campaigns, loyalty programs, and special offers to your high-value customers to ensure they stay engaged and loyal. <br>
 - **▶️Query** <br>
 ```sql
@@ -195,21 +201,7 @@ ORDER BY PurchaseValue DESC
 
 <img width="401" height="186" alt="image" src="https://github.com/user-attachments/assets/a1ae88ba-cb03-49b7-82a0-c29e1ef86882" /> <br>
 
-#### 🔍Calculate total purchase value by month
-Calculate the total purchase value by month to understand how customer behavior differs within months, providing insights into customer engagement and purchase behavior. <br>
-- **▶️Query** <br>
-```sql
-SELECT MONTH(OrderDate) AS Month,
-		SUM(OrderQuantity) AS Total_purchase
-FROM AW_Sales2016
-GROUP BY MONTH(OrderDate)
-ORDER BY MONTH(OrderDate)
-```
-- **💡Query result** <br>
-
-<img width="449" height="176" alt="image" src="https://github.com/user-attachments/assets/61a31f2f-e7d6-4c2c-8448-d0a46d450876" /> <br>
-
-#### 🔍Segment customers by spending size (VIP, Medium, Low Value)
+#### 2.2 🔍Segment customers by spending size (VIP, Medium, Low Value)
 The main purpose of segmenting customers by spending size (VIP, Medium, Low Value) is to optimize your business and marketing strategy. By understanding each group, the company can focus resources on high-value customers to increase profitability and personalize marketing efforts to better engage each segment. <br>
 **▶️Query** <br>
 ```sql
@@ -234,7 +226,24 @@ FROM segment
 - **💡Query result** <br>
 
 <img width="437" height="188" alt="image" src="https://github.com/user-attachments/assets/29993ac0-ba02-4639-ab37-e938a8c0a9f0" /> <br>
-#### 🔍(Repeat Customers) Calculate the percentage of customers who purchased more than once
+
+#### 2.3 🔍Calculate total purchase value by month
+Calculate the total purchase value by month to understand how customer behavior differs within months, providing insights into customer engagement and purchase behavior. <br>
+- **▶️Query** <br>
+```sql
+SELECT MONTH(OrderDate) AS Month,
+		SUM(OrderQuantity) AS Total_purchase
+FROM AW_Sales2016
+GROUP BY MONTH(OrderDate)
+ORDER BY MONTH(OrderDate)
+```
+- **💡Query result** <br>
+
+<img width="449" height="176" alt="image" src="https://github.com/user-attachments/assets/61a31f2f-e7d6-4c2c-8448-d0a46d450876" /> <br>
+- **🧠Insights** <br>
+Total purchase value significantly increases in the latter half of 2016. It indicates an upward trend in purchase value during the latter half of 2016. <br>
+
+#### 2.4 🔍(Repeat Customers) Calculate the percentage of customers who purchased more than once
 The main purpose of calculating the percentage of repeat customers is to measure customer loyalty and the effectiveness of your retention strategies. <br>
 - **▶️Query** <br>
 ```sql
@@ -251,7 +260,10 @@ FROM purchase_count
 
 <img width="452" height="70" alt="image" src="https://github.com/user-attachments/assets/35d9ca73-7375-453d-8815-d0d96560adbf" /> <br>
 
-#### 🔍Calculate average number of orders per customer by month
+- **🧠Insights** <br>
+The repeat customer rate is 13%. This is a concerningly low figure, which indicates that a very small percentage of our existing customers are returning to make a purchase. This could be a sign that the customer retention strategies are not very effective, or that the product/service isn't providing a strong enough incentive for customers to return. <br>
+
+#### 2.5 🔍Calculate average number of orders per customer by month
 The purpose of calculating the average number of orders per customer by month is to measure the purchase frequency of repeat buyers and understand how often our loyal customers are buying from us. <br>
 - **▶️Query** <br>
 ```sql
@@ -266,7 +278,10 @@ ORDER BY Month;
 
 <img width="449" height="183" alt="image" src="https://github.com/user-attachments/assets/6929d7e7-693c-4aab-892a-1a2c9d582144" /> <br>
 
-#### 🔍Calculate average amount of money per order by month
+- **🧠Insights** <br>
+From January to June, the average customer made only one purchase per month. In the latter half of 2016, this number increased significantly, with the average customer making 3 to 4 purchases per month. This indicates that the latter half of the year is when customers make the most purchases. <br>
+
+#### 2.6 🔍Calculate the average amount of money per order by month
 This analysis calculates the average amount of money per order by month to understand customer spending trends over time. <br>
 - **▶️Query** <br>
 ```sql
@@ -281,6 +296,23 @@ ORDER BY Month;
 - **💡Query result** <br>
 
 <img width="448" height="184" alt="image" src="https://github.com/user-attachments/assets/e09577d9-7de7-455d-9684-fc80c23ca9cb" /> <br>
+
+- **🧠Insights** <br>
+	- In the first half (January to June), the Average Order Value (AOV) is high, suggesting customers are making large, one-time purchases, likely for high-ticket items. This is coupled with a low repeat purchase rate. <br>
+	- Conversely, in the second half of the year (July to December), the AOV drops significantly, while the purchase frequency increases dramatically. This indicates that customers are returning to buy smaller, less expensive items more often. <br>
+
+## ✔️Final Conclusion & Recommendations
+### 📌Conclusion
+| **Aspect**        | **Insight** |
+|-------------------|-------------|
+|Purchasing behavior| Customers who bought the "Mountain Bikes" showed interest in related products like "Bottles and Cages" and "Tires and Tubes", which presents an opportunity for cross-selling.|
+|Purchasing trends  | In the latter half of 2016, customers purchased more frequently and repeatedly, driving up total purchase value, though the average spend per order was lower.|
+### 📌Recommendations
+- **Bundle Products:** Create and promote product bundles that combine mountain bikes with relevant accessories like bottles, cages, and tires.
+- **Optimize Website Layout:** Display "frequently bought together" or "customers also purchased" sections on the mountain bike product pages, featuring the identified related products.
+- **Loyalty programs:** Leverage loyalty programs and repeat-purchase incentives to sustain higher shopping frequency.
+- **Optimize Customer Retention:** Strengthen customer retention strategies by offering loyalty rewards, exclusive discounts, or personalized product recommendations to encourage repeat business throughout the year, not just in the second half.
+- **Selling strategies:** Apply up-selling and cross-selling strategies (e.g., bundles, free shipping thresholds) to increase average order value.
 
 
 
