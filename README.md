@@ -8,10 +8,10 @@
 
 ## Table of Contents
 [📌Background & Overview](#background--overview) <br>
-[📂Dataset Description & Data Structure](#dataset-description--data-structure)
-[⚙️Main Process](#main-process)
-[✔️Final Conclusion & Recommendations](#final-conclusion--recommendations)
-
+[📂Dataset Description & Data Structure](#dataset-description--data-structure) <br>
+[⚙️Main Process](#main-process) <br>
+[✔️Final Conclusion & Recommendations](#final-conclusion--recommendations) <br>
+ 
 ## 📌Background & Overview
 **📖 What is this project about?** <br>
 This project analyzes a dataset using SQL to extract insights about customer behaviors and deliver data-driven recommendations to enhance customer loyalty and optimize sales strategies.
