@@ -32,8 +32,8 @@ This project analyzes a dataset using SQL to extract insights about customer beh
 - **Data Source:** Kaggle
 - The AW_Sales2016 contains 23,935 records 
 - **Format:** CSV
-### Table Used & Relationships
-**1. Table Used**
+### Table Used & Relationships <br>
+**1. Table Used** <br>
 The dataset consists of **5 main tables** used to analyze: <br>
 **👥AW_Customers**
 <details>
